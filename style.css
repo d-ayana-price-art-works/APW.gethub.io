@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+:root {/*Refers to the colon properties*/
+	--primary-color:  rgb(124, 4, 4);/*AYANDA INSERT BACKGROUND IMAGE INSTEAD*/
+	--secondary-color: white;
+	--dark-color:black;
+	--light-color:#f4f4f4;
+
+}
+/*re-set default settings */
+*{
+	box-sizing: border-box;/*this allows us to add padding and borders without having to add to the width*/
+	margin: 0;
+	padding: 0;
+	}
+
+
+header{
+		background-color: black;
+	}
+	li{
+		list-style: none;
+	}
+/*settings for the body*/
+	body{
+		
+		font-family: 'lato', sans-serif;
+		background-color: black;
+		color: white;/* the colour of the text*/
+		line-height: 1.6;
+		
+			}
+/*settings for the bulet points*/
+	ul {/*this insures that there are no bulet points over all*/
+		list-style-type: none;
+		}
+	/*settings for the links*/
+	a {/* the code below insures that there are no underlining under the text over all*/
+		text-decoration: none;
+		color: white;/* the colour is the same cloure as the text*/
+	}
+
+	/*settings for the headings of both h1 and h2*/
+	h1, h2 {
+	text-align: center;			
+	 font-weight: 300;/* this relates to the texts blodness*/
+		line-height: 1.2;
+		margin: 10px 0;/*this relates to settings for the margin, top and bottom=10 WHILE left and right=0*/
+		
+	}
+		
+	/*settings for the paragraphs, so that the paragraphs are not squished together*/	
+	p {
+		margin: 10px 0;	/*this relates to settings for the margin, top and bottom=10 WHILE left and right=0*/
+		text-align: left;
+	}
+
+	/*settings for the all images*/
+	img {
+		width:100% /*this relates to settings for the image, the image will fill 100% of the set container, therefore a largge image will not bust out of its container*/
+		
+	}
+/*settings for the logo images*/
+.logo img {
+	width:25%; /*this relates to settings for the image, the image will fill 25% of the set container, therefore a largge image will not bust out of its container*/
+	text-align: left;
+	justify-content: left;
+	padding-left: 5%;
+	object-position: left top;
+	
+	
+	
+	
+}
+.primary-icon {
+	height: 40px;
+	
+}
+	/*settings for Navbar*/
+	.navbar{
+		background-color: black;
+		color: white;
+		min-height: 70px;
+		height: 140px;
+		text-align: right;
+		float: right;
+		list-style: none;
+		margin-top: 20px;
+		padding-right: 10px;
+		flex-wrap: wrap;	
+		
+	}
+
+
+	/*settings for the navbar bulet points. Then within the nav bar the text will align horizontally*/
+	.navbar ul {
+		display: flex;/* the nav bar the text will align horizontally*/
+
+	}
+	/*settings for the navbar links*/
+	.navbar a {
+		color: rgb(175, 2, 2);
+		padding: 10px;
+		font-size: 14px;
+		margin: 0 5px; /*settings for margin digits are respectfully left and right*/
+	}
+
+	/*settings for the hover eff, navbar links in the hover state*/
+	.navbar a:hover {
+	border-bottom: 2px white solid;
+	}
+	.navbar .flex {
+		justify-content: space-between;/*justify-content focus on the nav bar contents format. and alins the content on the horizaontal axis. "space-between" takes  the remaining space and puts it between the flex items */
+		flex-wrap: wrap;
+	}
+/*classes that are used for navbar on the page*/
+.navbar .flex {
+	justify-content: space-between;
+}
+.nav-menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 60px; ;
+}
+.nav-branding{
+	font-size: 2rem;
+	
+	
+}
+.nav-branding a {
+	color: rgb(175, 2, 2);
+	font-size: 2rem;
+
+}
+.nav-branding:hover{
+	color: white;
+	
+	
+}
+
+.nav-link{
+	transition: 0.7s ease;
+}
+.hamburger {
+	display: none;
+	cursor: pointer;
+}
+.bar{
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	transition-timing-function: all 0.3s ease-in-out;
+	background-color: purple;
+}
+@media(max-width: 768px){
+	.hamburger {
+		display: block;
+	}
+	.hamburger.active .bar:nth-child(2){
+		opacity: 0;
+	}
+	.hamburger.active .bar:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+	.hamburger.active .bar:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+	.nav-menu{
+	position: fixed;
+	left:-100%;
+	gap: 0;
+	flex-direction:column;
+	background-color: black;
+	width: 100%;
+	text-align: center;
+	transition: 0.3s;
+
+	}
+	.nav-item{
+		margin: 16px 0;
+	}
+	.nav-menu.active{
+		left: 0;
+	}
+}
+/*showcase*/
+.showcase {
+	height: 700px;
+	background-color: var(--primary-color);/*AYANDA INSERT BACKGROUND IMAGE INSTEAD*/
+	color: white;
+	position: relative;/*this allows us to possition things in the container*/
+	z-index: -1;
+	
+}
+
+.showcase h1{
+	font-size: 40px;	
+}
+.showcase p{
+margin: 20px 0;	
+}
+.showcase .grid {
+	overflow: visible;/*this fixes the scroll bar created by height settings that goes passe the container. therefore the overflow will go pass the container and overlapp it*/
+	grid-template-columns: 55% 45%;/*that would be 55% for the text and 45 for the form*/
+	gap: 30px;
+}
+.showcase-form {
+position: relative;/*relates to the positioning*/
+top: 60px;/*by setting it to 60px this will push the request quote card down*/
+height: 450px;/*by setting it to 350px this will go passed the container that is set at . hence giving us a scroll bar*/
+width: 400px;/*by setting it to 400px this will make the form smaller*/
+padding: 40px;
+z-index: 1;/*by setting the z index to 100 this will insure that the form is always in front*/
+justify-self: flex-start;/*by adding this the form is pushed to the right*/
+}
+.showcase-form .form-control{/*this this will wrapp the text*/
+	margin: 30px 0;/*this adds a 26px margin on the top and bottomthat will separate the control text out*/
+}
+.showcase-form input[type='text'],/*this target the input "text"*/
+.showcase-form input[type='email'] /*this target the input "email"*/{
+	border: 0;
+	border-bottom: 1px solid #6a0000;
+	width: 100%;/*this relates to the line below the text by saying 100% we are saying that we want the line to go all the way "text""*/
+	padding: 3px;
+	font-size: 16px;
+}
+.showcase-form input:focus {
+	outline: 0;border: none;
+	right: 0;
+	left: 0;
+	background:white;
+}
+.showcase::before,
+.showcase::after{
+content: '';
+position: absolute;
+height: 100px;
+bottom: -70px;
+right: 0;
+left: 0;
+background:black;
+transform: skewY(3deg);
+-webkit-transform: skewY(3deg);/*for chrome*/
+-moz-transform: skewY(3deg);
+-ms-transform: skewY(3deg);/*for microsoft internet explorer*/
+}
+/*stats*/
+.stats{
+	padding-top: 100px ;
+}
+.stats-heading {
+	max-width: 1500px;
+	margin:auto
+}
+.stats .grid h3 {
+	font-size: 35px;
+}
+.stas .grid p {
+	font-size: 20px;
+	font-weight: bold;
+}
+/*Cli*/
+.cli .grid{
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat (2,1fr);
+	
+}
+
+/*Cloud*/
+.cloud .grid {
+	grid-template-columns: 4fr 3fr;
+}
+/*languages*/
+.languages .card {
+	text-align: center;
+	margin: 10px 10px 40px;
+	transition: 0.2s ease-in;
+}
+.languages .card h4 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.languages .card:hover {
+	transform: translateY(-15px);
+	margin: 18px 10px 40px;
+}
+
+.cli .grid > *:first-child{
+	grid-column: 1/ span 2;
+	grid-row: 1/ span 2;
+}
+.welcome-text{
+position: absolute;
+margin: 20% 30%;
+text-align: center;
+}
+	
+/*utilities that are used everywhere on the page*/
+	/*classes that are used everywhere on the page*/
+	.container {
+		max-width: 1100px;
+		margin:0 auto;
+		overflow: auto;
+		padding: 0 40px; /*This will insure that the text is pushed over*/
+		z-index: 0;
+	}
+
+	/*curves out the showcase form and changes the background clour of the form*/
+	.card {
+		background-color:black;
+		color:white;
+		border-radius: 20px;
+		box-shadow: 0 3px 10px rgba( 0, 0, 0, 0.2);
+		padding: 30px;
+		margin: 10px;
+		text-align: left;
+		cursor: pointer;
+		z-index: 0;
+		
+	}
+	.btn{
+		display: inline-block;
+		padding: 10px 30px;
+		cursor: pointer;
+		background: (--primary-color);
+		color: black;
+		border: none;
+		border-radius:5px;
+	}
+	.btn-outline{
+		background-color: transparent;
+		border: 1px white solid;
+
+	}
+	.btn:hover{
+	transform: scale(.98);}
+
+/*background and buttons*/
+.bg-primary, 
+.btn-primary {
+	background-color: var(--primary-color);
+	color: white;
+}
+
+.bg-secondary, 
+.btn-secondary {
+	background-color: var(--secondary-color);
+	color: white;
+}
+.bg-light,
+.btn-light {
+	background-color: var(--light-color);
+	color: black;}
+
+.bg-dark,
+.btn-dark {
+	background-color: var(--dark-color);
+	color: white;
+	}
+
+	.bg-primary a, 
+	.btn-primary a,
+	.bg-secondary a, 
+	.btn-secondary a,
+	.bg-light a,
+	.btn-light a,
+	.bg-dark a,
+	.btn-dark a {
+		color: white;
+	}
+
+/*text sizes*/
+.lead {
+	font-size: 20px;
+	
+}
+.sm {
+	font-size: 1rem;
+}
+.md {
+	font-size: 2rem;
+}
+.lg{
+	font-size: 3rem;
+}
+.xl {
+	font-size: 4rem;
+}
+.lg img {
+	width:50%; /*this relates to settings for the image, the image will fill 25% of the set container, therefore a largge image will not bust out of its container*/	
+}
+.text-center {
+	text-align: center;
+}
+
+	/*classes that are used everywhere on the page*/
+	.flex {
+		display: flex;/*this turns the nav bar contents to a colum format*/
+		justify-content: center;/*justify-content focus on the nav bar contents format. and alins the content on the horizaontal axis*/
+		align-items: center;/*align-items focus on the nav bar contents format, and alins the content on the vertically axis*/
+		height: 100%;
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: (2fr 1fr); /*diffines how wide we want the gride in fractions*/
+		background:url("Black Realistic Desktop Wallpaper.png");
+		grid-gap: 20px;/*creates a gap*/
+		justify-content: center; /*aligns horizontally*/
+		align-items: center ; /*aligns vertically*/
+		height: 100%;/*this would be the hight on the grid and not the showcase container. but the container is set at */
+	}
+
+	.grid-3{
+		grid-template-columns: (3fr 1fr); /*diffines how wide we want the gride in fractions*/
+	}
+/*margin*/
+	.my-1 {
+	margin: 1rem 0;
+	}
+	.my-2 {
+		margin: 1.5rem 0;
+		}
+	.my-3 {
+		margin: 2rem 0;
+		}
+	.my-4 {
+		margin: 3rem 0;
+			}
+	
+	.my-5 {
+		margin: 4rem 0;
+			}
+
+/*margin all around*/
+.m-1 {
+	margin: 1rem ;
+	}
+	.m-2 {
+		margin: 1.5rem ;
+		}
+	.m2 {
+		margin: 2rem ;
+			}
+	.m-4 {
+		margin: 3rem ;
+			}
+	
+	.m-5 {
+		margin: 4rem ;
+			}
+	
+		/*padding*/
+	.py-1 {
+		padding: 1rem 0;
+		}
+	.py-2 {
+		padding: 1.5rem 0;			}
+	.py-3 {
+		padding: 2rem 0;
+		}
+	.py-4 {
+		padding: 3rem 0;
+			}
+		
+	.py-5 {
+			padding: 4rem 0;
+				}
+		
+	/*padding all around*/
+	.p-1 {
+		padding: 1rem ;
+		}
+	.p-2 {
+			padding: 1.5rem ;
+			}
+	.p-3 {
+			padding: 2rem ;
+			}
+	.p-4 {
+		padding: 3rem ;
+			}
+		
+	.p-5 {
+		padding: 4rem ;
+			}
+
+	/*end of utilities*/	
+nav{
+	
+	display: flex;
+	padding:2% 6%;
+	justify-content: space-between;
+	align-items: center;
+	background:transparent;
+	
+	}
+	
+	nav img{
+		width: 100%;
+		justify-content: left;
+		align-content: first baseline;
+	}
+
+
+		.nav link{
+		flex: 1;
+		text-align: right;
+	}
+	.nav link ul li{
+	list-style: none;
+	display:inline-block;
+	padding: 8px 12px;	
+	position: relative;
+
+	}	
+/*the footer*/
+	.footer-navbar {
+		background-color: transparent;
+		color: black;
+		height: 280px;
+		float: center;
+		list-style: none;
+		margin-top: 20px;
+		padding-right: 2% 6%;
+		justify-content: space-between;
+		display: flex;
+		
+
+	  }
+	  
+	  .footer-navbar ul {
+		padding:0;
+		list-style:none;
+		text-align:center;
+		font-size:18px;
+		line-height:1.6;
+		margin-bottom:0;
+		
+	  }
+	  
+	  .footer-navbar li {
+		padding:0 10px;
+	  }
+	  
+	  .footer-navbar ul a {
+		color:red;
+		text-decoration:none;
+		opacity:0.8;
+	  }
+	  
+	  .footer-navbar ul a:hover {
+		opacity:1;
+	  }
+	  
+	  .footer-navbar .social {
+		text-align:center;
+		padding-bottom:25px;
+	  }
+	  
+	  .footer-navbar .social a {
+		font-size:24px;
+		width:40px;
+		height:40px;
+		line-height:40px;
+		display:inline-block;
+		text-align:center;
+		border-radius:50%;
+		border: 1px solid #ccc;
+		margin:0 8px;
+		color:inherit;
+		opacity:0.75;
+		;
+	  }
+	  
+	  .footer-navbar .social > a:hover {
+		opacity:0.9 wheat;
+	  }
+	  
+	  .footer-navbar .copyright {
+		margin-top:15px;
+		text-align:center;
+		font-size:13px;
+		color:rgb(109, 19, 19);
+		margin-bottom:0;
+		;
+	  }
+
+	  /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+/* tablet */
+@media(max-width: 768px){
+	.grid,
+	.showcase .grid
+	.stats .grid
+	.cli .grid
+	.cloud .grid{
+	grid-template-columns: 1fr;	
+	grid-template-rows: 1fr;
+	}
+	.showcase {
+		height: auto;
+	}
+	.showcase-text{
+		text-align: center;
+		margin-top: 40px;
+	}
+	.showcase-form{
+		justify-self: center;
+		margin: auto;
+	}
+	.cli .grid > *:first-child{
+		grid-column: 1;
+		grid-row: 1;
+	}
+}
+/* mobile */
+@media(max-width: 500px){
+	.navbar {
+		height: 110px;
+		
+	}
+	.navbar .flex{
+		flex-direction: column;
+	}
+	.navbar ul {
+		padding: 10px;
+		background-color: rgba( 0, 0, 0, 0.1);
+	}
+	
+}
